@@ -4,7 +4,7 @@ import { Navbar, Nav, FormGroup, FormControl, Button, NavItem } from 'react-boot
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../../actions/chat';
-
+import NewMessageForm from '../NewMessageForm/NewMessageForm';
 
 class MenuComponent extends Component {
 
@@ -18,11 +18,9 @@ class MenuComponent extends Component {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Form pullLeft>
-          <FormGroup>
-            <FormControl type="text" placeholder="Message" />
-          </FormGroup>
-          {' '}
-          <Button type="submit" onClick={() => { this.props.actions.sendMessageAction('Baye'); }} >Send Message</Button>
+
+          <NewMessageForm />
+
         </Navbar.Form>
         <Nav pullLeft>
           <NavItem href="#" onClick={() => { this.props.actions.refreshChatAction(); }} >Refresh</NavItem>
@@ -30,6 +28,12 @@ class MenuComponent extends Component {
       </Navbar.Collapse>
     </Navbar>);
   }
+
+//<FormGroup>
+//<FormControl type="text" placeholder="Message" />
+//</FormGroup>
+//{' '}
+//<Button type="submit" onClick={() => { this.props.actions.sendMessageAction('Baye'); }} >Send Message</Button>
 
 }
 

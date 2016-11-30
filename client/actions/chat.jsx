@@ -1,6 +1,7 @@
-function sendMessageAction(messageText) {
+function sendMessageAction(from, messageText) {
   return {
     type: 'SEND_MESSAGE',
+    from,
     messageText,
   };
 }

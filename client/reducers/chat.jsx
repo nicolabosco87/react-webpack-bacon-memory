@@ -23,7 +23,7 @@ export default function chat(state = initialState, action = '') {
       console.log(action);
       const newState = { ...state, messages: [...state.messages, {
         key: shortid(),
-        from: 'User',
+        from: action.from,
         message: action.messageText,
       }] };
       return newState;
@@ -36,9 +36,8 @@ export default function chat(state = initialState, action = '') {
     }
 
     default:
-      //console.log("DEFAULT REDUCER");
-      //console.log(action);
-
+      console.log("DEFAULT REDUCER");
+      console.log(action);
       return state;
   }
 }
