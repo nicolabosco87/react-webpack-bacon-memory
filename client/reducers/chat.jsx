@@ -19,8 +19,6 @@ const initialState = {
 export default function chat(state = initialState, action = '') {
   switch (action.type) {
     case 'SEND_MESSAGE': {
-      console.log("nuvo messaggio action!");
-      console.log(action);
       const newState = { ...state, messages: [...state.messages, {
         key: shortid(),
         from: action.from,
@@ -30,7 +28,6 @@ export default function chat(state = initialState, action = '') {
     }
 
     case 'MESSAGES_RECEIVED': {
-      console.log("MESSAGES RECEIVED!");
       const newState = { ...state, messages: action.messages.messages };
       return newState;
     }
